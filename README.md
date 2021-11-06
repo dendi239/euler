@@ -1,4 +1,5 @@
 # euler
+[![pytest](https://github.com/dendi239/euler/actions/workflows/main.yml/badge.svg)](https://github.com/dendi239/euler/actions/workflows/main.yml)
 
 My model solutions for project-euler tasks.
 
