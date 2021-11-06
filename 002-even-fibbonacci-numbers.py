@@ -4,7 +4,7 @@ import itertools
 import typing as tp
 
 
-def fibbonaccies() -> tp.Generator[None, int, None]:
+def fibbonaccies() -> tp.Generator[int, None, None]:
     """
     Generator for fibbonacci numbers
 
