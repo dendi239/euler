@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{numprint}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\newcommand{\pycode}[1]{\lstinputlisting[language=Python]{#1}}
+
+\newenvironment{task}[2]
+{\section{#1}
+\newcommand{\printcode}{\pycode{#2}}
+}
+{\printcode
+}
+
+\title{Решения первых десяти задач из \href{https://projecteuler.net/index.php?section=problems}{Project Euler}}
+\author{Денис Смирнов}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\begin{task}{Кратные трём и пяти}{001-multiples-3-and-5.py}
+    Если мы выпишем все натуральные числа меньше 10, которые делятся на 3 или 5, получим 3, 5, 6 и 9.
+    Сумма этих чисел равна 23.
+
+    Найдите сумму всех чисел, делящихся на 3 или 5 меньших 1000.
+\end{task}
+
+\begin{task}{Чётные числа фиббоначчи}{002-even-fibbonacci-numbers.py}
+    Каждый новый элемент в последовательности Фиббоначчи получается сложением двух предыдущих элементов.
+    Начиная с 1 и 2, первые 10 элементов будут равны:
+    \begin{equation*}
+        1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \dots
+    \end{equation*}
+
+    Рассматривая числа Фиббоначчи не превосходящие 4 миллиона, найдите сумму чётных элементов.
+\end{task}
+
+\begin{task}{Наибольший простой делитель}{003-largest-prime-factor.py}
+    Простые делители числа 13195 это 5, 7, 13 и 29.
+        
+    Какой наибольший простой делитель числа 600851475143?
+\end{task}
+
+\begin{task}{Наибольшее произведение-палиндром}{004-largest-palindrome-product.py}
+    Числа-палиндромы читаются одинаково слева-направо и справа-налево.
+    Наибольший палиндром полученный как произведение двух двузначных чисел это $9009 = 91 \times 99$.
+
+    Найдите наибольший палиндром полученный как произведение двух трёхзначных чисел.
+\end{task}
+
+\begin{task}{Наименьшее общее кратное}{005-smallest-multiple.py}
+    2520 --- это наименьшее число которое делится без остатка на все числа от 1 до 10.
+
+    Найдите наименьше общее кратное всех чисел от 1 до 20.
+\end{task}
+
+\begin{task}{Сумма квадратов разностей}{006-sum-square-difference.py}
+    Сумма квадратов первых 10 натуральных чисел это:
+    \begin{equation*}
+        1^2 + 2^2 + \dots + 10^2 = 385
+    \end{equation*}
+    Квадрат суммы первых 10 натуральных чисел это:
+    \begin{equation*}
+        \left(1 + 2 + \dots + 10\right)^2 = 3025
+    \end{equation*}
+    Отсюда, разница между суммой квадратов и квадратом суммы первых 10 натуральных чисел это:
+    \begin{equation*}
+        3025 - 385 = 2640
+    \end{equation*}
+
+    Найдите разницу между суммой квадратов и квадратом суммы первых 100 натуральных чисел.
+\end{task}
+
+\begin{task}{10001-ое простое}{007-10001st-prime.py}
+    Выписывая первые 6 простых чисел: 2, 3, 5, 7, 11 и 13, мы видим что 6ое простое число это 13.
+
+    Найдите \numprint{10001}ое простое число.
+\end{task}
+
+\begin{task}{Наибольшее произведение подотрезка}{008-largest-product-in-a-series.py}
+    Четыре последовательных цифры в 1000-значном числе с наибольшим произведением это: $9\times 9 \times 8 \times 9 = 5832$.
+    Само число, однако, указано в переменной \texttt{N} в ниже в коде.
+
+    Найдите тринадцать последовательных цфир с наибольшим произведением.
+    Какое значение этого произведения?
+\end{task}
+
+\begin{task}{Особая тройка Пифагора}{009-special-pythagorean-triplet.py}
+    Тройка Пифагора это множество из трёх натуральных чисел, $a < b < c$, для которых:
+    \begin{equation*}
+        a^2+b^2 = c^2
+    \end{equation*}
+    Например, $3^2+4^2=9+16=25=5^2$.
+
+    Существует ровно одна Пифагорова тройка для которой $a+b+c=1000$.
+    Найдите произведение $abc$.
+\end{task}
+
+\begin{task}{Сумма простых}{010-summation-of-primes.py}
+    Сумма простых меньших 10 это: $2+3+5+7=17$.
+
+    Найдите сумму простых до двух миллионов.
+\end{task}
+
+\end{document}
